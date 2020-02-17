@@ -49,6 +49,8 @@ class FeedState extends State<Feed> {
 
   Widget singlePost() {
     return Container(
+      margin: EdgeInsets.all(10),
+      decoration: BoxDecoration(color: Colors.purple,borderRadius:BorderRadius.all(Radius.circular(5))),
       child: Column(
         children: <Widget>[
           ListTile(
@@ -74,10 +76,15 @@ class FeedState extends State<Feed> {
             ),
           ),
           CarouselSlider.builder(
+            //not giving a height would set aspect ratio to 16:9
+            height: 400,
+              viewportFraction: 1.0,
               itemCount: (getApost().imageList).length,
               itemBuilder: (context, index) {
                 return Image.asset(
                   getApost().imageList.elementAt(index),
+                  width: double.infinity,
+                  fit: BoxFit.cover,
                 );
               })
         ],
