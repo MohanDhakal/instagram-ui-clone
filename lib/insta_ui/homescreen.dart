@@ -42,6 +42,7 @@ class FeedState extends State<Feed> {
 
   @override
   Widget build(BuildContext context) {
+    int selected_index = 0;
     return Scaffold(
         appBar: AppBar(
           leading: Icon(InstaClone.camera),
@@ -72,8 +73,7 @@ class FeedState extends State<Feed> {
           },
           currentIndex: this.selectedIndex,
         ),
-        body: setSelectedWidget(selectedIndex)
-    );
+        body: setSelectedWidget(selectedIndex));
   }
 
   Widget setSelectedWidget(index) {
@@ -322,25 +322,39 @@ class FeedState extends State<Feed> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top:8.0,left: 15),
-              child: Icon(InstaClone.favorite,color: Colors.red,size: 30,),
+              padding: const EdgeInsets.only(top: 8.0, left: 15),
+              child: Icon(
+                InstaClone.favorite,
+                color: Colors.red,
+                size: 30,
+              ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top:8.0,left:15),
-              child: Icon(InstaClone.comment_alt2,size: 30,),
+              padding: const EdgeInsets.only(top: 8.0, left: 15),
+              child: Icon(
+                InstaClone.comment_alt2,
+                size: 30,
+              ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top:8.0,left: 15),
-              child: Icon(InstaClone.direction,size: 30,),
+              padding: const EdgeInsets.only(top: 8.0, left: 15),
+              child: Icon(
+                InstaClone.direction,
+                size: 30,
+              ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top:8.0,left: 180),
-              child: Icon(InstaClone.bookmark,color: Colors.black26,size: 30,),
+              padding: const EdgeInsets.only(top: 8.0, left: 180),
+              child: Icon(
+                InstaClone.bookmark,
+                color: Colors.black26,
+                size: 30,
+              ),
             )
           ],
         ),
         Padding(
-          padding: const EdgeInsets.only(left:15,top:10),
+          padding: const EdgeInsets.only(left: 15, top: 10),
           child: Row(
             children: <Widget>[
               ClipRRect(
@@ -352,8 +366,13 @@ class FeedState extends State<Feed> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left:5.0),
-                child: Text("Liked by  ${_placeholderName} and  ${_likecount} others",style: TextStyle(fontSize: 15,),),
+                padding: const EdgeInsets.only(left: 5.0),
+                child: Text(
+                  "Liked by  ${_placeholderName} and  ${_likecount} others",
+                  style: TextStyle(
+                    fontSize: 15,
+                  ),
+                ),
               )
             ],
           ),

@@ -5,8 +5,8 @@ class Fragments {
   String title;
   IconData icon;
   Fragments(this.title, this.icon);
-}
 
+}
 
 class FirstFragment extends StatefulWidget {
   @override
