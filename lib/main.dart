@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:insta_ui/insta_ui/homescreen.dart';
+import 'package:insta_ui/test.dart';
 
 void main() => runApp(MyApp());
 
