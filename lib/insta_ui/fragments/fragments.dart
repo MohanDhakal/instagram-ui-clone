@@ -6,6 +6,8 @@ class Fragments {
   IconData icon;
   Fragments(this.title, this.icon);
 }
+
+
 class FirstFragment extends StatefulWidget {
   @override
   _FirstFragmentState createState() => _FirstFragmentState();

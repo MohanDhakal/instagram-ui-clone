@@ -67,15 +67,10 @@ flutter:
   # example:
 
   fonts:
-    - family: MyFlutterApp
+    - family: InstaClone
       fonts:
-        - asset: fonts/MyFlutterApp.ttf
+        - asset: fonts/InstaClone.ttf
 
-  #  flutter:
-  #     fonts:
-  #     - family:  MyFlutterApp
-  #        fonts:
-  #        - asset: fonts/MyFlutterApp.ttf
 
 
 
