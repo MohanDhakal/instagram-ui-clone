@@ -16,10 +16,10 @@
 ///         Author:    Google
 ///         License:   Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
 ///         Homepage:  https://design.google.com/icons/
-/// * Font Awesome, Copyright (C) 2016 by Dave Gandy
-///         Author:    Dave Gandy
-///         License:   SIL ()
-///         Homepage:  http://fortawesome.github.com/Font-Awesome/
+/// * Modern Pictograms, Copyright (c) 2012 by John Caserta. All rights reserved.
+///         Author:    John Caserta
+///         License:   SIL (http://scripts.sil.org/OFL)
+///         Homepage:  http://thedesignoffice.org/project/modern-pictograms/
 /// * Iconic, Copyright (C) 2012 by P.J. Onori
 ///         Author:    P.J. Onori
 ///         License:   SIL (http://scripts.sil.org/OFL)
@@ -32,6 +32,14 @@
 ///         Author:    Designmodo for Smashing Magazine
 ///         License:   CC BY ()
 ///         Homepage:  http://designmodo.com/linecons-free/
+/// * MFG Labs, Copyright (C) 2012 by Daniel Bruce
+///         Author:    MFG Labs
+///         License:   SIL (http://scripts.sil.org/OFL)
+///         Homepage:  http://www.mfglabs.com/
+/// * Font Awesome, Copyright (C) 2016 by Dave Gandy
+///         Author:    Dave Gandy
+///         License:   SIL ()
+///         Homepage:  http://fortawesome.github.com/Font-Awesome/
 ///
 import 'package:flutter/widgets.dart';
 
@@ -43,11 +51,16 @@ class InstaClone {
   static const IconData near_me = const IconData(0xe800, fontFamily: _kFontFam);
   static const IconData favorite = const IconData(0xe801, fontFamily: _kFontFam);
   static const IconData favorite_border = const IconData(0xe802, fontFamily: _kFontFam);
-  static const IconData bookmark = const IconData(0xe803, fontFamily: _kFontFam);
+  static const IconData grid = const IconData(0xe803, fontFamily: _kFontFam);
   static const IconData comment_alt2 = const IconData(0xe804, fontFamily: _kFontFam);
   static const IconData direction = const IconData(0xe805, fontFamily: _kFontFam);
   static const IconData camera = const IconData(0xe806, fontFamily: _kFontFam);
   static const IconData dot_3 = const IconData(0xe807, fontFamily: _kFontFam);
   static const IconData more_vert = const IconData(0xe808, fontFamily: _kFontFam);
   static const IconData settings_overscan = const IconData(0xe809, fontFamily: _kFontFam);
+  static const IconData panorama_vertical = const IconData(0xe80a, fontFamily: _kFontFam);
+  static const IconData view_agenda = const IconData(0xe80b, fontFamily: _kFontFam);
+  static const IconData view_day = const IconData(0xe80c, fontFamily: _kFontFam);
+  static const IconData th_thumb_empty = const IconData(0xf00b, fontFamily: _kFontFam);
+  static const IconData bookmark_empty = const IconData(0xf097, fontFamily: _kFontFam);
 }

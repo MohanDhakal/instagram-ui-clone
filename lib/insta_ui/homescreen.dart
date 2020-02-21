@@ -346,7 +346,7 @@ class FeedState extends State<Feed> {
             Padding(
               padding: const EdgeInsets.only(top: 8.0, left: 180),
               child: Icon(
-                InstaClone.bookmark,
+                InstaClone.bookmark_empty,
                 color: Colors.black26,
                 size: 30,
               ),

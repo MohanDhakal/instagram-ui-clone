@@ -9,4 +9,5 @@ class Constants {
   ];
 
   static final double numberSize=18;
+  static final double textSize=14;
 }
