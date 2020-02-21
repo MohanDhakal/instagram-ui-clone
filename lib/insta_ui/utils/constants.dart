@@ -7,4 +7,6 @@ class Constants {
         "images/first.png",
         "images/second.jpeg"
   ];
+
+  static final double numberSize=18;
 }
