@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:insta_ui/insta_ui/activity.dart';
 import 'package:insta_ui/insta_ui/homescreen.dart';
 import 'package:insta_ui/insta_ui/profile.dart';
 import 'package:insta_ui/scroll_test.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.purple,
       ),
-      home: Profile(),
+      home: Activity(),
     );
   }
 }

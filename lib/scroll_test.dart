@@ -1,46 +1,31 @@
-// Flutter code sample for SingleChildScrollView
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:insta_ui/insta_ui/model/notifications.dart';
 
-// In this example, the column becomes either as big as viewport, or as big as
-// the contents, whichever is biggest.
-
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart';
-
-
-
-/// This is the stateless widget that the main application instantiates.
-class MyStatelessWidget extends StatelessWidget {
-  MyStatelessWidget({Key key}) : super(key: key);
-
+class JsonTest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (BuildContext context, BoxConstraints viewportConstraints) {
-        return SingleChildScrollView(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: viewportConstraints.maxHeight,
-            ),
-            child: IntrinsicHeight(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    // A fixed-height child.
-                    color: const Color(0xff808000), // Yellow
-                    height: 120.0,
-                  ),
-                  Expanded(
-                    child: Container(
-                      color: Color.fromRGBO(123, 45, 56, 1), // Red
-                      height: 120.0,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        );
-      },
-    );
+    return Scaffold(
+        body: RaisedButton(
+      onPressed: _fetchJsonData,
+      child: Text("Get Data"),
+    ));
   }
+
+  _fetchJsonData() async {
+    String jsonString = await _loadJsonFromAsset();
+    final jsonResponse = json.decode(jsonString);
+    NotificationList notificationList = NotificationList.fromJson(jsonResponse);
+    MyNotification notification = notificationList.notifList.elementAt(0);
+    NotificationMessage notificationMessage = notification.ntfList.elementAt(0);
+    print(notificationMessage.message);
+    print(notificationMessage.imageUri);
+  }
+
+
+  Future<String> _loadJsonFromAsset() async {
+    return await rootBundle.loadString('json/notifications.json');
+  }
+
 }

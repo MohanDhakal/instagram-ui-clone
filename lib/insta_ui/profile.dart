@@ -34,11 +34,11 @@ class _ProfileState extends State<Profile> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(left: 50),
+                      padding: const EdgeInsets.only(left: 20),
                       child: Text(
                         "mohandkl.512",
                         style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                            fontSize: 25, ),
                       ),
                     ),
                     Container(
@@ -265,7 +265,7 @@ class _ProfileState extends State<Profile> {
       children: <Widget>[
         IconButton(
           icon: Icon(Icons.view_day),
-          color: changedColor,
+          color: Colors.blue,
           onPressed: () {
             flag = !flag;
             if (!flag) {
