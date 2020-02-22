@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:insta_ui/insta_clone_icons.dart';
 import 'package:insta_ui/insta_ui/fragments/fragments.dart';
+import 'package:insta_ui/insta_ui/storydetail.dart';
 import 'package:insta_ui/insta_ui/utils/constants.dart';
 import 'package:insta_ui/insta_ui/utils/post.dart';
 
@@ -28,8 +29,8 @@ class FeedState extends State<Feed> {
       Icons.search,
     ),
     Fragments('Add', Icons.add),
-    Fragments('Heart', Icons.thumb_up),
-    Fragments("profile", Icons.person)
+    Fragments('Heart', InstaClone.favorite),
+    Fragments("profile", Icons.perm_contact_calendar)
   ];
 
   Post getApost() {
@@ -42,7 +43,6 @@ class FeedState extends State<Feed> {
 
   @override
   Widget build(BuildContext context) {
-    int selected_index = 0;
     return Scaffold(
         appBar: AppBar(
           leading: Icon(InstaClone.camera),
@@ -117,6 +117,7 @@ class FeedState extends State<Feed> {
                   width: 40,
                   fit: BoxFit.cover,
                 )),
+
             trailing: Icon(InstaClone.more_vert),
             title: Text(
               getApost().caption,
@@ -162,7 +163,7 @@ class FeedState extends State<Feed> {
                       ))),
               Positioned(
                   left: 160,
-                  top: 300,
+                  top: 280,
                   child: Row(
                     children: <Widget>[
                       Container(
@@ -247,14 +248,19 @@ class FeedState extends State<Feed> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: ClipRRect(
-                    borderRadius: BorderRadius.circular(24),
-                    child: Image.asset(
-                      'images/messi.jpg',
-                      height: 50,
-                      width: 50,
-                      fit: BoxFit.cover,
-                    )),
+                child: InkWell(
+                  onTap: (){
+                    showStoryDetail();
+                  },
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(24),
+                      child: Image.asset(
+                        'images/messi.jpg',
+                        height: 50,
+                        width: 50,
+                        fit: BoxFit.cover,
+                      )),
+                ),
               ),
               Text("Leo Messi")
             ],
@@ -346,7 +352,7 @@ class FeedState extends State<Feed> {
             Padding(
               padding: const EdgeInsets.only(top: 8.0, left: 180),
               child: Icon(
-                InstaClone.bookmark,
+                InstaClone.bookmark_empty,
                 color: Colors.black26,
                 size: 30,
               ),
@@ -379,5 +385,9 @@ class FeedState extends State<Feed> {
         )
       ],
     );
+  }
+
+  void showStoryDetail() {
+    Navigator.push(context,MaterialPageRoute(builder: (context) => StoryDetail()),);
   }
 }
