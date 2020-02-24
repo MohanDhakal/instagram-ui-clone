@@ -44,8 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: defaultPages),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.search),
-        onPressed: () {
-          _controller.currentState.goToPage(2);
+        onPressed: () {_controller.currentState.goToPage(2);
         },
       ),
     );

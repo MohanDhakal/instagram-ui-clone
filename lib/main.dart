@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:insta_ui/insta_ui/activity.dart';
 import 'package:insta_ui/insta_ui/homescreen.dart';
+import 'package:insta_ui/insta_ui/insta_direct.dart';
 import 'package:insta_ui/insta_ui/profile.dart';
 import 'package:insta_ui/insta_ui/storydetail.dart';
 import 'package:insta_ui/scroll_test.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-      home: Feed(),
+      home: InstaDirect(),
     );
   }
     /*
@@ -26,4 +27,5 @@ class MyApp extends StatelessWidget {
     Activity route is to show notification  and
     Profile route is to show insta profile,based on Web version
     */
+
 }
