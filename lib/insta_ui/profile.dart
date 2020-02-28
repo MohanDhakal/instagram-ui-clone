@@ -10,12 +10,19 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("User Profile"),
-      ),
-      body: ListView(
+    return profileBody();
+  }
+
+  Color changedColor = Colors.white;
+  bool flag;
+
+  Widget profileBody(){
+    return Expanded(
+      child: ListView(
         children: <Widget>[
+          AppBar(
+            title: Text("User Profile"),
+          ),
           Container(
             child: Row(
               children: <Widget>[
@@ -38,7 +45,7 @@ class _ProfileState extends State<Profile> {
                       child: Text(
                         "mohandkl.512",
                         style: TextStyle(
-                            fontSize: 25, ),
+                          fontSize: 25, ),
                       ),
                     ),
                     Container(
@@ -138,7 +145,7 @@ class _ProfileState extends State<Profile> {
                   height: 1,
                   color: Colors.white,
                   margin:
-                      EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 5),
+                  EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 5),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -193,71 +200,58 @@ class _ProfileState extends State<Profile> {
                   height: 1,
                   color: Colors.white,
                   margin:
-                      EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 5),
+                  EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 5),
                 )
               ],
             ),
           ),
           SelectionWidget(),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Image.asset(
-                    'images/mohan.jpg',
-                    height: 100,
-                    width: 100,
-                    fit: BoxFit.cover,
-                  ),
-                  Image.asset(
-                    'images/second.jpeg',
-                    height: 100,
-                    width: 100,
-                    fit: BoxFit.cover,
-                  ),
-                  Image.asset(
-                    'images/messi.jpg',
-                    height: 100,
-                    width: 100,
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Image.asset(
-                    'images/mohan.jpg',
-                    height: 100,
-                    width: 100,
-                    fit: BoxFit.cover,
-                  ),
-                  Image.asset(
-                    'images/first.png',
-                    height: 100,
-                    width: 100,
-                    fit: BoxFit.cover,
-                  ),
-                  Image.asset(
-                    'images/messi.jpg',
-                    height: 100,
-                    width: 100,
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-            ],
-          )
+        GridView.count(crossAxisCount: 3,
+        shrinkWrap: true,
+        physics: ClampingScrollPhysics(),
+        children: <Widget>[
+          Image.asset(
+            'images/mohan.jpg',
+            height: 100,
+            width: 100,
+            fit: BoxFit.cover,
+          ),
+          Image.asset(
+            'images/second.jpeg',
+            height: 100,
+            width: 100,
+            fit: BoxFit.cover,
+          ),
+          Image.asset(
+            'images/messi.jpg',
+            height: 100,
+            width: 100,
+            fit: BoxFit.cover,
+          ),
+          Image.asset(
+            'images/mohan.jpg',
+            height: 100,
+            width: 100,
+            fit: BoxFit.cover,
+          ),
+          Image.asset(
+            'images/second.jpeg',
+            height: 100,
+            width: 100,
+            fit: BoxFit.cover,
+          ),
+          Image.asset(
+            'images/messi.jpg',
+            height: 100,
+            width: 100,
+            fit: BoxFit.cover,
+          ),
+        ],
+        )
         ],
       ),
     );
   }
-
-  Color changedColor = Colors.white;
-  bool flag;
 
   Widget SelectionWidget() {
     return Row(

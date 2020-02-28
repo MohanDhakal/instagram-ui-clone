@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:insta_ui/insta_ui/model/messages.dart';
 
 class InstaDirect extends StatefulWidget {
+  static const routeName='/direct';
   @override
   _InstaDirectState createState() => _InstaDirectState();
 }

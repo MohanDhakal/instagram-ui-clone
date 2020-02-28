@@ -46,12 +46,16 @@ class ActivityState extends State<Activity> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Activity"),
+    return Expanded(
+      child: ListView(
+        children: <Widget>[dynamiContent(), setSelectedWidget()],
       ),
-      body: setSelectedWidget(),
+    );
+  }
+
+  Widget dynamiContent() {
+    return AppBar(
+      title: Text("Activity"),
     );
   }
 
@@ -65,6 +69,7 @@ class ActivityState extends State<Activity> {
         scrollDirection: Axis.vertical,
         itemCount: notificationList.notifList.length,
         shrinkWrap: true,
+        physics: ClampingScrollPhysics(),
         itemBuilder: (context, index) {
           myNotification = notificationList.notifList.elementAt(index);
           return Column(
@@ -73,9 +78,14 @@ class ActivityState extends State<Activity> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(_assingString(myNotification.timeStamp),style: TextStyle(fontWeight: FontWeight.bold),),
+                child: Text(
+                  _assingString(myNotification.timeStamp),
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
               ListView.builder(
+                shrinkWrap: true,
+                physics: ClampingScrollPhysics(),
                 itemCount: myNotification.ntfList.length,
                 itemBuilder: (context, index) {
                   return Padding(
@@ -109,14 +119,12 @@ class ActivityState extends State<Activity> {
                     ),
                   );
                 },
-                shrinkWrap: true,
               )
             ],
           );
         },
       );
     }
-
   }
 
   Future<NotificationList> _fetchJsonData() async {
