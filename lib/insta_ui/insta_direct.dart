@@ -70,51 +70,51 @@ class _InstaDirectState extends State<InstaDirect> {
               children: <Widget>[Text("Messages"), Text("1 request",style: TextStyle(color: Colors.blue),)],
             ),
           ),
-          ListView.builder(
-              shrinkWrap: true,
-              itemCount: messageList.msgList.length,
-              itemBuilder: (context, index) {
-                Message real_message = messageList.msgList.elementAt(index);
-                return ListTile(
-                  title: Text(
-                    real_message.name,
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  subtitle: Text(real_message.message),
-                  leading: Stack(
-                   children: <Widget>[
-                     ClipRRect(
-                       child: Image.asset(
-                         real_message.imageUri,
-                         height: 40,
-                         width: 40,
-                         fit: BoxFit.cover,
-                       ),
-                       borderRadius: BorderRadius.circular(15),
-                     ),
-                     Positioned(
-                       left:28,
-                       top:28,
-                       child: Container(
-                         height: 10,
-                         width: 10,
-                         decoration: BoxDecoration(
-                           borderRadius: BorderRadius.circular(4),
-                           color: Colors.greenAccent
+          Expanded(
+            child: ListView.builder(
+                itemCount: messageList.msgList.length,
+                itemBuilder: (context, index) {
+                  Message real_message = messageList.msgList.elementAt(index);
+                  return ListTile(
+                    title: Text(
+                      real_message.name,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Text(real_message.message),
+                    leading: Stack(
+                     children: <Widget>[
+                       ClipRRect(
+                         child: Image.asset(
+                           real_message.imageUri,
+                           height: 40,
+                           width: 40,
+                           fit: BoxFit.cover,
                          ),
+                         borderRadius: BorderRadius.circular(15),
                        ),
-                     )
-                   ],
-                  ),
-                  trailing: Icon(Icons.camera_alt),
-                );
-              }),
+                       Positioned(
+                         left:28,
+                         top:28,
+                         child: Container(
+                           height: 10,
+                           width: 10,
+                           decoration: BoxDecoration(
+                             borderRadius: BorderRadius.circular(4),
+                             color: Colors.greenAccent
+                           ),
+                         ),
+                       )
+                     ],
+                    ),
+                    trailing: Icon(Icons.camera_alt),
+                  );
+                }),
+          ),
         ],
       );
     }
   }
 
-  Future<List<Message>> getAllMessages() async {}
 
   Future<MessageList> _fetchJsonData() async {
     String jsonString = await _loadJsonFromAsset();

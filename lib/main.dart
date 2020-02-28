@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:insta_ui/insta_ui/activity.dart';
+import 'package:insta_ui/insta_ui/direct_detaill.dart';
 import 'package:insta_ui/insta_ui/homescreen.dart';
 import 'package:insta_ui/insta_ui/insta_direct.dart';
 import 'package:insta_ui/insta_ui/profile.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-      home: InstaDirect(),
+      home: DirectDetail(),
     );
   }
     /*

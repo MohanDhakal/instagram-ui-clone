@@ -28,6 +28,26 @@
     "name": "FC Barcelona",
     "message": "You Replied to their story",
     "imageUri": "images/fc_barcelona.jpg"
+  },
+  {
+    "name": "Ram Bastola",
+    "message": "You Replied to their story",
+    "imageUri": "images/fc_barcelona.jpg"
+  },
+  {
+    "name": "Argentina Fc",
+    "message": "This is some random message",
+    "imageUri": "images/messi.jpg"
+  },
+  {
+    "name": "Cristiano Ronaldo",
+    "message": "This is some random message",
+    "imageUri": "images/mohan.jpg"
+  },
+  {
+    "name": "FC Barcelona",
+    "message": "You Replied to their story",
+    "imageUri": "images/fc_barcelona.jpg"
   }
 
 ]
